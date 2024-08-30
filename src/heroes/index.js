@@ -1,4 +1,6 @@
+export * from './components/HeroCard';
 export * from './components/HeroList';
+export * from './helpers/getHeroById';
 export * from './helpers/getHeroesByPublisher';
 export * from './index';
 export * from './pages/DCPage';
