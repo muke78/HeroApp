@@ -1,2 +1,2 @@
 export * from './components/Navbar';
-export * from './utils/dataNavbar';
+export * from './index';
