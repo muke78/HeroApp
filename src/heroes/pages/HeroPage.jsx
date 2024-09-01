@@ -9,7 +9,7 @@ export const HeroPage = () => {
 
   const hero = useMemo(() => getHeroById(id), [id]);
 
-  const image = `./${id}.webp`;
+  const image = `${id}.webp`;
 
   if (!hero) {
     return <Navigate to="/" />;

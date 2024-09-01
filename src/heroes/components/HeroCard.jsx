@@ -16,7 +16,7 @@ export const HeroCard = ({
   first_appearance,
   characters,
 }) => {
-  const heroImageUrl = `./${id}.webp`;
+  const heroImageUrl = `${id}.webp`;
 
   return (
     <div className="col-md-3 col-sm-6">
