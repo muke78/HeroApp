@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Icon } from "./moleculas/Icon";
 import { v } from "../../styles/variables";
 
+
+
 const CharactersByHero = ({ characters, alter_ego }) => {
   if (characters === alter_ego) return <></>;
   return <p> {characters} </p>;
@@ -14,7 +16,7 @@ export const HeroCard = ({
   first_appearance,
   characters,
 }) => {
-  const heroImageUrl = `/${id}.webp`;
+  const heroImageUrl = `./${id}.webp`;
 
   return (
     <div className="col-md-3 col-sm-6">
