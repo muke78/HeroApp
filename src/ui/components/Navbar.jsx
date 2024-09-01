@@ -1,5 +1,7 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { dataEstaticaNavbar } from "../utils/dataNavbar";
+import { Link, useNavigate } from "react-router-dom";
+import { v } from "../../styles/variables";
+import { Icon } from "../../heroes";
+import { ItemsNavbar } from "./moleculas/ItemsNavbar";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -11,34 +13,37 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
-      <Link className="navbar-brand" to="/">
-        Asociaciones
-      </Link>
-
-      <div className="navbar-collapse">
-        <div className="navbar-nav">
-          {dataEstaticaNavbar.map((items) => (
-            <NavLink
-              className={({ isActive }) =>
-                `nav-item nav-link ${isActive ? "active" : ""}`
-              }
-              to={items.to}
-              key={items.label}
+    <nav className="navbar navbar-expand-lg bg-body-secondary">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+          Asociaciones
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarText">
+          <ItemsNavbar />
+          <div className="ms-auto d-flex align-items-center">
+            <span className="nav-item nav-link">
+              <b>Erick</b>
+            </span>
+            <button
+              type="button"
+              onClick={onLogout}
+              className="btn btn-outline-primary ms-3"
             >
-              {items.label}
-            </NavLink>
-          ))}
+              <Icon label="Salir" icon={<v.logOutIcon />} />
+            </button>
+          </div>
         </div>
-      </div>
-
-      <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-        <ul className="navbar-nav ml-auto">
-          <span className="nav-item nav-link text-primary">Erick Gonzalez</span>
-          <button className="nav-item nav-link btn" onClick={onLogout}>
-            Logout
-          </button>
-        </ul>
       </div>
     </nav>
   );
