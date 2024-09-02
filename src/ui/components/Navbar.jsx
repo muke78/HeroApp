@@ -15,9 +15,6 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-secondary">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          Asociaciones
-        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -29,6 +26,7 @@ export const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        <span className="navbar-brand">Hero app</span>
         <div className="collapse navbar-collapse" id="navbarText">
           <ItemsNavbar />
           <div className="ms-auto d-flex align-items-center">

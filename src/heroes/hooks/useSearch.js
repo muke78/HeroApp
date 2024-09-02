@@ -12,13 +12,13 @@ export const useSearch = () => {
     searchText: q,
   });
   const heroes = getHeroesByName(q);
+  const heroesCount = heroes.length;
 
   const showSearch = q.length === 0;
   const showError = q.length > 0 && heroes.length === 0;
 
   const onSearchSubmit = (event) => {
     event.preventDefault();
-    if (searchText <= 0) return;
     navigate(`?q=${searchText}`);
   };
 
@@ -30,5 +30,6 @@ export const useSearch = () => {
     searchText,
     showError,
     showSearch,
+    heroesCount,
   };
 };

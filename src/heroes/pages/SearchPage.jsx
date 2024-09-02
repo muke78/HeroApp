@@ -1,4 +1,5 @@
 import { HeroCard } from "../components/HeroCard";
+import { MotionSearch } from "../components/MotionSearch";
 import { useSearch } from "../hooks/useSearch";
 
 export const SearchPage = () => {
@@ -10,6 +11,7 @@ export const SearchPage = () => {
     searchText,
     showError,
     showSearch,
+    heroesCount,
   } = useSearch();
 
   return (
@@ -35,9 +37,12 @@ export const SearchPage = () => {
 
       <div className="pt-4 row">
         <div className="col-12">
-          <h4>
-            Resultado de la busqueda <u> {q} </u>{" "}
-          </h4>
+          <MotionSearch
+            value={heroesCount}
+            color="#cfe2ff"
+            showError={showError}
+          />
+
           <hr />
 
           <div

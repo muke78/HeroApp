@@ -7,6 +7,7 @@ import { PiListNumbersBold } from "react-icons/pi";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { TbSquareLetterMFilled } from "react-icons/tb";
 import { TbSquareLetterDFilled } from "react-icons/tb";
+import { GoHomeFill } from "react-icons/go";
 
 export const v = {
   moreInfoIcon: FaPlusCircle,
@@ -18,4 +19,5 @@ export const v = {
   toBackIcon: IoMdArrowRoundBack,
   marvelIcon: TbSquareLetterMFilled,
   dcIcon: TbSquareLetterDFilled,
+  home: GoHomeFill,
 };
