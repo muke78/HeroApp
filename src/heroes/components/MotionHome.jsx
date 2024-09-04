@@ -9,7 +9,7 @@ export const MotionHome = ({ value, color }) => {
       locales="es-ES"
       animate={{
         duration: 1500, // Ajusta la duración de la animación en milisegundos
-        easing: "ease-out", // Ajusta la curva de la animación
+        easing: "ease-out", // Ajusta la curva de la
       }}
       style={{
         backgroundColor: color,

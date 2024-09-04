@@ -7,6 +7,7 @@ export * from './components/MotionSearch';
 export * from './components/graficas/GraficaHeroesPersonajes';
 export * from './components/graficas/GraficaPrimeraAparicion';
 export * from './components/moleculas/Icon';
+export * from './components/tablas/TablaHeroesMarvel';
 export * from './helpers/getHeroByCount';
 export * from './helpers/getHeroById';
 export * from './helpers/getHeroesByName';

@@ -3,6 +3,7 @@ import { CardMarvel } from "../components/CardMarvel";
 import {
   GraficaHeroesPersonajes,
   GraficaPrimeraAparicion,
+  TablaHeroesMarvel,
 } from "../../heroes/index";
 
 export const HomePage = () => {
@@ -12,6 +13,7 @@ export const HomePage = () => {
       <CardDC publisher="DC Comics" />
       <GraficaHeroesPersonajes />
       <GraficaPrimeraAparicion marvel="Marvel Comics" dc="DC Comics" />
+      <TablaHeroesMarvel publisher="Marvel Comics" />
     </div>
   );
 };
