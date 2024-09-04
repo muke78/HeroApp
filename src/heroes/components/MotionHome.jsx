@@ -1,4 +1,5 @@
 import MotionNumber from "motion-number";
+import { v } from "../../styles/variables";
 
 export const MotionHome = ({ value, color }) => {
   return (
@@ -14,7 +15,7 @@ export const MotionHome = ({ value, color }) => {
         backgroundColor: color,
         borderRadius: 999,
         padding: "0px 15px",
-        color: "#fff",
+        color: v.colorWhite,
         fontSize: "1rem", // Ajusta el tamaño de fuente si es necesario
       }}
     />

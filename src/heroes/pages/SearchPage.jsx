@@ -1,17 +1,21 @@
 import { HeroCard } from "../components/HeroCard";
+import { MotionHome } from "../components/MotionHome";
 import { MotionSearch } from "../components/MotionSearch";
 import { useSearch } from "../hooks/useSearch";
+import { v } from "../../styles/variables";
 
 export const SearchPage = () => {
   const {
     heroes,
+    heroesCount,
+    heroesPublisherCountsDC,
+    heroesPublisherMarvel,
     onInputChange,
     onSearchSubmit,
     q,
     searchText,
     showError,
     showSearch,
-    heroesCount,
   } = useSearch();
 
   return (
@@ -39,9 +43,19 @@ export const SearchPage = () => {
         <div className="col-12">
           <MotionSearch
             value={heroesCount}
-            color="#cfe2ff"
+            color={v.colorSearchHero}
             showError={showError}
           />
+          <div className="d-flex">
+            <div className="pe-5">
+              <span>Heroes de marvel encontrados </span>
+              <MotionHome value={heroesPublisherMarvel} color={v.colorMarvel} />
+            </div>
+            <div>
+              <span>Heroes de DC encontrados </span>
+              <MotionHome value={heroesPublisherCountsDC} color={v.colorDC} />
+            </div>
+          </div>
 
           <hr />
 

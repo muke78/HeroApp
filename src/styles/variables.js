@@ -20,4 +20,13 @@ export const v = {
   marvelIcon: TbSquareLetterMFilled,
   dcIcon: TbSquareLetterDFilled,
   home: GoHomeFill,
+  colorMarvel: `#99232c`,
+  colorDC: `#1b212e`,
+  colorNotFound: `#f8d7da`,
+  colorSearchHero: `#cfe2ff`,
+  colorBlack: `#000`,
+  colorWhite: `#fff`,
+  colorMotionOvalCardDC: `#555555`,
+  backgroundGraphMarvel: `#d43542c5`,
+  backgroundGraphDC: `#405072c0`,
 };

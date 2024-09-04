@@ -9,6 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { v } from "../../../styles/variables";
 
 ChartJS.register(
   BarElement,
@@ -19,11 +20,11 @@ ChartJS.register(
   Legend
 );
 
-export const GraficasHeroes = () => {
-  
+export const GraficaHeroesPersonajes = () => {
   const heroCharacterCounts = heroes.map((hero) => ({
     superhero: hero.superhero,
     characterCount: hero.characters.split(",").length,
+    publisher: hero.publisher,
   }));
 
   const data = {
@@ -32,16 +33,23 @@ export const GraficasHeroes = () => {
       {
         label: "Number of Characters",
         data: heroCharacterCounts.map((hc) => hc.characterCount),
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-        borderColor: "rgba(75, 192, 192, 1)",
-        borderWidth: 1,
+        pointStyle: "rectRounded",
+        backgroundColor: heroCharacterCounts.map((hc) =>
+          hc.publisher === "Marvel Comics"
+            ? v.backgroundGraphMarvel
+            : v.backgroundGraphDC
+        ),
+        borderColor: heroCharacterCounts.map((hc) =>
+          hc.publisher === "Marvel Comics" ? v.colorMarvel : v.colorDC
+        ),
+        borderWidth: 2,
       },
     ],
   };
 
-  // Configuración de opciones de la gráfica
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top",
@@ -55,7 +63,13 @@ export const GraficasHeroes = () => {
 
   return (
     <div className="col">
-      <Bar data={data} options={options} />
+      <div className="card text-bg-light p-1">
+        <Bar
+          data={data}
+          options={options}
+          style={{ width: "1000px", height: "500px" }}
+        />
+      </div>
     </div>
   );
 };

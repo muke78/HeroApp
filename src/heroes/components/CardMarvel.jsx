@@ -3,7 +3,6 @@ import { getHeroByCount } from "../helpers/getHeroByCount";
 import { Link } from "react-router-dom";
 import { v } from "../../styles/variables";
 import { Icon } from "./moleculas/Icon";
-import { MotionSearch } from "./MotionSearch";
 import { MotionHome } from "./MotionHome";
 
 export const CardMarvel = ({ publisher }) => {
@@ -28,7 +27,8 @@ export const CardMarvel = ({ publisher }) => {
           <div className="d-flex justify-content-between align-items-start mb-3">
             <h5 className="card-title">{publisher}</h5>
             <h6 className="card-title mb-0">
-              Número de héroes <MotionHome value={marvel} color="#ff4757" />
+              Número de héroes{" "}
+              <MotionHome value={marvel} color={v.colorMarvel} />
             </h6>
           </div>
           <p className="card-text mb-3 overflow-y-auto">

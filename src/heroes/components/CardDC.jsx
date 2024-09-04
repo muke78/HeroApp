@@ -29,7 +29,7 @@ export const CardDC = ({ publisher }) => {
             <h5 className="card-title">{publisher}</h5>
             <h6 className="card-title mb-0">
               Número de héroes {""}
-              <MotionHome value={dc} color="#555555" />
+              <MotionHome value={dc} color={v.colorMotionOvalCardDC} />
             </h6>
           </div>
           <p className="card-text mb-3 overflow-y-auto">

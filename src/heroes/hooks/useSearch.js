@@ -8,11 +8,22 @@ export const useSearch = () => {
   const location = useLocation();
 
   const { q = "" } = queryString.parse(location.search);
+
   const { searchText, onInputChange } = useForm({
     searchText: q,
   });
+
   const heroes = getHeroesByName(q);
   const heroesCount = heroes.length;
+
+  const heroesPublisherMarvel = heroes.filter(
+    (hc) => hc.publisher === "Marvel Comics"
+  ).length;
+
+  const heroesPublisherCountsDC = heroes.filter(
+    (hc) => hc.publisher === "DC Comics"
+  ).length;
+
 
   const showSearch = q.length === 0;
   const showError = q.length > 0 && heroes.length === 0;
@@ -31,5 +42,7 @@ export const useSearch = () => {
     showError,
     showSearch,
     heroesCount,
+    heroesPublisherMarvel,
+    heroesPublisherCountsDC
   };
 };
