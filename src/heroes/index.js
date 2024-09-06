@@ -1,4 +1,5 @@
 export * from './components/CardDC';
+export * from './components/Loader';
 export * from './components/CardMarvel';
 export * from './components/HeroCard';
 export * from './components/HeroList';

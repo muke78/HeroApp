@@ -3,16 +3,16 @@ import {
   MaterialReactTable,
   useMaterialReactTable,
 } from "material-react-table";
-import { companyMarvel, companyDC } from "../../../ui/index";
+import { companiesData } from "../../../ui/index";
 import { Link } from "react-router-dom";
 import { getHeroesByPublisher } from "../../helpers/getHeroesByPublisher";
+import { Loader } from "../Loader";
 
-let data = companyMarvel;
-console.log(data);
-
-export const TablaHeroesMarvel = ({ publisher }) => {
-  const [data, setData] = useState(companyMarvel);
-  const [originalData] = useState(companyMarvel);
+export const TablaHeroesMarvel = () => {
+  const [data, setData] = useState(companiesData);
+  const [originalData] = useState(companiesData);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSpinnerVisible, setIsSpinnerVisible] = useState(false);
 
   const [columns, setColumns] = useState([
     {
@@ -57,11 +57,10 @@ export const TablaHeroesMarvel = ({ publisher }) => {
     },
   ]);
 
-  const [isLoading, setIsLoading] = useState(false);
-
   const handleRowClick = (companyName) => {
-    if (companyName === publisher) {
-      const heroes = getHeroesByPublisher(publisher);
+    setIsSpinnerVisible(true);
+    setTimeout(() => {
+      const heroes = getHeroesByPublisher(companyName);
 
       setData(heroes);
 
@@ -98,7 +97,8 @@ export const TablaHeroesMarvel = ({ publisher }) => {
         },
       ]);
       setIsLoading(true);
-    }
+      setIsSpinnerVisible(false);
+    }, 2000);
   };
 
   // Función para restaurar los datos originales
@@ -152,7 +152,7 @@ export const TablaHeroesMarvel = ({ publisher }) => {
   };
 
   return (
-    <div className="mb-3">
+    <div className="mb-3 mt-3">
       <button
         className="btn btn-secondary mb-2"
         onClick={handleResetData}
@@ -160,11 +160,15 @@ export const TablaHeroesMarvel = ({ publisher }) => {
       >
         Regresar
       </button>
-      <MaterialReactTable
-        columns={columns}
-        data={data}
-        initialState={{ density: "compact" }}
-      />
+      {isSpinnerVisible ? (
+        <Loader />
+      ) : (
+        <MaterialReactTable
+          columns={columns}
+          data={data}
+          initialState={{ density: "compact" }}
+        />
+      )}
     </div>
   );
 };
