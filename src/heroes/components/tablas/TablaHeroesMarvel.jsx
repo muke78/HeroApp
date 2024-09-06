@@ -1,8 +1,5 @@
 import { useState } from "react";
-import {
-  MaterialReactTable,
-  useMaterialReactTable,
-} from "material-react-table";
+import { MaterialReactTable } from "material-react-table";
 import { companiesData } from "../../../ui/index";
 import { Link } from "react-router-dom";
 import { getHeroesByPublisher } from "../../helpers/getHeroesByPublisher";
