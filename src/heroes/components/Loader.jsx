@@ -1,10 +1,14 @@
-import { DotLoader } from "react-spinners";
+import { BoltLoader } from "react-awesome-loaders";
 import { v } from "../../styles/variables";
 
 export const Loader = () => {
   return (
     <div className="d-flex align-items-center justify-content-center">
-      <DotLoader color={v.colorSearchHero} size={200} />
+      <BoltLoader
+        className={"loaderbolt"}
+        boltColor={v.colorWhite}
+        backgroundBlurColor={v.colorBlack}
+      />
     </div>
   );
 };

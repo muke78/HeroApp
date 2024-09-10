@@ -29,4 +29,5 @@ export const v = {
   colorMotionOvalCardDC: `#555555`,
   backgroundGraphMarvel: `#d43542c5`,
   backgroundGraphDC: `#405072c0`,
+  colorTable: `#203a84`,
 };
