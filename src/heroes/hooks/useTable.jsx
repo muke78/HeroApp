@@ -17,7 +17,7 @@ export const useTable = () => {
       setColumns(dataColumnsTableIntern);
     }
     if (stateLoading) {
-      setIsLoading(JSON.parse(stateLoading));
+      setIsLoading(JSON.parse(!stateLoading));
     }
   }, []);
 
