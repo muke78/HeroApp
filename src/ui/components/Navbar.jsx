@@ -10,6 +10,9 @@ export const Navbar = () => {
     navigate("/login", {
       replace: true,
     });
+    localStorage.removeItem("heroesData");
+    localStorage.removeItem("stateButton");
+    localStorage.removeItem("stateSpinner");
   };
 
   return (

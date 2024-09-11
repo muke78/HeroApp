@@ -26,7 +26,7 @@ export const TablaHeroesMarvel = () => {
       <button
         className="btn btn-secondary mb-2"
         onClick={handleResetData}
-        hidden={!isLoading}
+        style={{ display: isLoading ? "block" : "none" }}
       >
         Regresar
       </button>
