@@ -1,13 +1,11 @@
-import { FaPlusCircle } from "react-icons/fa";
+import { FaUser, FaSearch, FaPlusCircle } from "react-icons/fa";
 import { MdOutlineLogout } from "react-icons/md";
-import { FaSearch } from "react-icons/fa";
-import { FaUser } from "react-icons/fa";
 import { RiNewspaperFill } from "react-icons/ri";
 import { PiListNumbersBold } from "react-icons/pi";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { TbSquareLetterMFilled } from "react-icons/tb";
-import { TbSquareLetterDFilled } from "react-icons/tb";
+import { TbSquareLetterMFilled, TbSquareLetterDFilled } from "react-icons/tb";
 import { GoHomeFill } from "react-icons/go";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 export const v = {
   moreInfoIcon: FaPlusCircle,
@@ -30,4 +28,6 @@ export const v = {
   backgroundGraphMarvel: `#d43542c5`,
   backgroundGraphDC: `#405072c0`,
   colorTable: `#203a84`,
+  eyeOpen: FiEye,
+  eyeClose: FiEyeOff,
 };

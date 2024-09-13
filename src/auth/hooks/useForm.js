@@ -15,9 +15,11 @@ export const useForm = (initialForm = {}) => {
     //Una forma de hacerlo
     // setFormState(initialForm);
 
-     // Segunda forma de hacerlo
+    // Segunda forma de hacerlo
     setFormState({
-      ...initialForm
+      username: formState.username, 
+      email: "",
+      password: "",
     });
   };
 

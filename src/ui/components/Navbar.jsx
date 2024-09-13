@@ -2,9 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { v } from "../../styles/variables";
 import { Icon } from "../../heroes";
 import { ItemsNavbar } from "./moleculas/ItemsNavbar";
+import { useUser } from "../../auth/context/UserProvider";
+// import { useUser } from "../../auth/context/UserProvider";
 
 export const Navbar = () => {
   const navigate = useNavigate();
+
+  const { user } = useUser();
 
   const onLogout = () => {
     navigate("/login", {
@@ -13,6 +17,7 @@ export const Navbar = () => {
     localStorage.removeItem("heroesData");
     localStorage.removeItem("stateButton");
     localStorage.removeItem("stateSpinner");
+    localStorage.removeItem("user");
   };
 
   return (
@@ -34,7 +39,7 @@ export const Navbar = () => {
           <ItemsNavbar />
           <div className="ms-auto d-flex align-items-center">
             <span className="nav-item nav-link">
-              <b>Erick</b>
+              <h6>Hola, {user}</h6>
             </span>
             <button
               type="button"

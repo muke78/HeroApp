@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../hooks/useForm";
+import { v } from "../../styles/variables";
+import { useAuth } from "../hooks/useAuth";
+
+const emailLogin = "example@gmail.com";
+const passwordLogin = "123456";
 
 export const LoginPage = () => {
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
-  const emailLogin = "petite.maryy.05@gmail.com";
-  const passwordLogin = "123456";
+  const { login } = useAuth();
 
   const { formState, username, email, password, onInputChange, onResetForm } =
     useForm({
@@ -21,6 +26,7 @@ export const LoginPage = () => {
     event.preventDefault();
 
     if (email === emailLogin && password === passwordLogin) {
+      login(username);
       navigate("/", {
         replace: true,
       });
@@ -29,6 +35,12 @@ export const LoginPage = () => {
       onResetForm();
     }
   };
+
+  useEffect(() => {
+    if (error && (email || password)) {
+      setError("");
+    }
+  }, [formState]);
 
   return (
     <div className="container mt-5">
@@ -65,7 +77,7 @@ export const LoginPage = () => {
           <div className="mb-3">
             <label className="form-label">Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               value={password}
               onChange={onInputChange}
@@ -73,6 +85,13 @@ export const LoginPage = () => {
               placeholder={passwordLogin}
               required={true}
             />
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="position-absolute fs-5"
+              style={{ right: "65px", top: "65%", cursor: "pointer" }}
+            >
+              {showPassword ? <v.eyeClose /> : <v.eyeOpen />}
+            </span>
           </div>
           {error && <h4 className="text-danger"> {error} </h4>}
           <button type="submit" className="btn btn-primary">
