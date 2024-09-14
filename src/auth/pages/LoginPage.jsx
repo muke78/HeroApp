@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "../hooks/useForm";
 import { v } from "../../styles/variables";
 import { useAuth } from "../hooks/useAuth";
+import { useLogout } from "../../hooks/useLogout";
 
 const emailLogin = "example@gmail.com";
 const passwordLogin = "123456";

@@ -1,24 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
 import { v } from "../../styles/variables";
 import { Icon } from "../../heroes";
 import { ItemsNavbar } from "./moleculas/ItemsNavbar";
 import { useUser } from "../../auth/context/UserProvider";
-// import { useUser } from "../../auth/context/UserProvider";
+import { useLogout } from "../../hooks/useLogout";
 
 export const Navbar = () => {
-  const navigate = useNavigate();
+  const { onLogout } = useLogout();
 
   const { user } = useUser();
-
-  const onLogout = () => {
-    navigate("/login", {
-      replace: true,
-    });
-    localStorage.removeItem("heroesData");
-    localStorage.removeItem("stateButton");
-    localStorage.removeItem("stateSpinner");
-    localStorage.removeItem("user");
-  };
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-secondary">
