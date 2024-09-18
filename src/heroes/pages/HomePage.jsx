@@ -1,10 +1,10 @@
-import { CardDC } from "../components/CardDC";
-import { CardMarvel } from "../components/CardMarvel";
+import { CardDC } from '../components/CardDC';
+import { CardMarvel } from '../components/CardMarvel';
 import {
   GraficaHeroesPersonajes,
   GraficaPrimeraAparicion,
   TablaHeroesMarvel,
-} from "../../heroes/index";
+} from '../../heroes/index';
 
 export const HomePage = () => {
   return (

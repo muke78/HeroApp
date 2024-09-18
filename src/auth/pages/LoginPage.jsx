@@ -1,14 +1,14 @@
-import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useFormLogin } from "../hooks/useFormLogin";
-import { v } from "../../styles/variables";
-import { UserContext } from "../context/UserContext";
-import "./styles/LoginPage.css";
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useFormLogin } from '../hooks/useFormLogin';
+import { v } from '../../styles/variables';
+import { UserContext } from '../context/UserContext';
+import './styles/LoginPage.css';
 
-const passwordLogin = "123456";
+const passwordLogin = '123456';
 
 export const LoginPage = () => {
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const { login } = useContext(UserContext);
@@ -16,29 +16,29 @@ export const LoginPage = () => {
 
   const { formState, username, email, password, onInputChange, onResetForm } =
     useFormLogin({
-      username: "",
-      email: "",
-      password: "",
+      username: '',
+      email: '',
+      password: '',
     });
 
   const onSubmit = (event) => {
     event.preventDefault();
 
     if (password === passwordLogin) {
-      const lastPath = localStorage.getItem("lastPath") || "/";
+      const lastPath = localStorage.getItem('lastPath') || '/';
       login(username);
       navigate(lastPath, {
         replace: true,
       });
     } else {
-      setError("Credenciales invalidas");
+      setError('Credenciales invalidas');
       onResetForm();
     }
   };
 
   useEffect(() => {
     if (error && password) {
-      setError("");
+      setError('');
     }
   }, [formState]);
 
@@ -80,7 +80,7 @@ export const LoginPage = () => {
               <div className="card-contain-items">
                 <label className="form-label">Password</label>
                 <input
-                  type={showPassword ? "text" : "password"}
+                  type={showPassword ? 'text' : 'password'}
                   name="password"
                   value={password}
                   onChange={onInputChange}

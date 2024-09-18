@@ -1,8 +1,8 @@
-import { useMemo } from "react";
-import { Navigate, useParams, useNavigate } from "react-router-dom";
-import { getHeroById } from "../helpers/getHeroById";
-import { Icon } from "../components/moleculas/Icon";
-import { v } from "../../styles/variables";
+import { useMemo } from 'react';
+import { Navigate, useParams, useNavigate } from 'react-router-dom';
+import { getHeroById } from '../helpers/getHeroById';
+import { Icon } from '../components/moleculas/Icon';
+import { v } from '../../styles/variables';
 
 export const HeroPage = () => {
   const { id } = useParams();

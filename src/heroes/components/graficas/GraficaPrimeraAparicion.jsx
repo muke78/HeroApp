@@ -1,6 +1,6 @@
-import React from "react";
-import { Bar } from "react-chartjs-2";
-import { heroes } from "../../../ui";
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import { heroes } from '../../../ui';
 import {
   Chart as ChartJS,
   BarElement,
@@ -9,9 +9,9 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
-import { getHeroByCount } from "../../helpers/getHeroByCount";
-import { v } from "../../../styles/variables";
+} from 'chart.js';
+import { getHeroByCount } from '../../helpers/getHeroByCount';
+import { v } from '../../../styles/variables';
 
 ChartJS.register(
   BarElement,
@@ -34,18 +34,18 @@ export const GraficaPrimeraAparicion = ({ marvel, dc }) => {
     labels: uniquePublishers,
     datasets: [
       {
-        label: "Marvel Comics",
+        label: 'Marvel Comics',
         data: {
-          "Marvel Comics": marvelHeroesCount,
+          'Marvel Comics': marvelHeroesCount,
         },
         backgroundColor: v.backgroundGraphMarvel,
         borderColor: v.colorMarvel,
         borderWidth: 2,
       },
       {
-        label: "DC Comics",
+        label: 'DC Comics',
         data: {
-          "DC Comics": dcHeroesCount,
+          'DC Comics': dcHeroesCount,
         },
         backgroundColor: v.backgroundGraphDC,
         borderColor: v.colorDC,
@@ -60,11 +60,11 @@ export const GraficaPrimeraAparicion = ({ marvel, dc }) => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "top",
+        position: 'top',
       },
       title: {
         display: true,
-        text: "Number of Publisher by Heroes",
+        text: 'Number of Publisher by Heroes',
       },
     },
   };
@@ -75,7 +75,7 @@ export const GraficaPrimeraAparicion = ({ marvel, dc }) => {
         <Bar
           data={data}
           options={options}
-          style={{ width: "1000px", height: "500px" }}
+          style={{ width: '1000px', height: '500px' }}
         />
       </div>
     </div>

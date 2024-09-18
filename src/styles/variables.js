@@ -1,11 +1,11 @@
-import { FaUser, FaSearch, FaPlusCircle } from "react-icons/fa";
-import { MdOutlineLogout } from "react-icons/md";
-import { RiNewspaperFill } from "react-icons/ri";
-import { PiListNumbersBold } from "react-icons/pi";
-import { IoMdArrowRoundBack } from "react-icons/io";
-import { TbSquareLetterMFilled, TbSquareLetterDFilled } from "react-icons/tb";
-import { GoHomeFill } from "react-icons/go";
-import { FiEye, FiEyeOff } from "react-icons/fi";
+import { FaUser, FaSearch, FaPlusCircle } from 'react-icons/fa';
+import { MdOutlineLogout } from 'react-icons/md';
+import { RiNewspaperFill } from 'react-icons/ri';
+import { PiListNumbersBold } from 'react-icons/pi';
+import { IoMdArrowRoundBack } from 'react-icons/io';
+import { TbSquareLetterMFilled, TbSquareLetterDFilled } from 'react-icons/tb';
+import { GoHomeFill } from 'react-icons/go';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 export const v = {
   moreInfoIcon: FaPlusCircle,

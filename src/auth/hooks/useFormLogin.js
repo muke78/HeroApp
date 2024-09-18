@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const useFormLogin = (initialForm = {}) => {
   const [formState, setFormState] = useState(initialForm);
@@ -19,7 +19,7 @@ export const useFormLogin = (initialForm = {}) => {
     setFormState({
       username: formState.username,
       email: formState.email,
-      password: "",
+      password: '',
     });
   };
 

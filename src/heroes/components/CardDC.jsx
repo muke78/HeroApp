@@ -1,24 +1,24 @@
-import React from "react";
-import { getHeroByCount } from "../helpers/getHeroByCount";
-import { Link } from "react-router-dom";
-import { Icon } from "./moleculas/Icon";
-import { v } from "../../styles/variables";
-import { MotionHome } from "./MotionHome";
+import React from 'react';
+import { getHeroByCount } from '../helpers/getHeroByCount';
+import { Link } from 'react-router-dom';
+import { Icon } from './moleculas/Icon';
+import { v } from '../../styles/variables';
+import { MotionHome } from './MotionHome';
 
 export const CardDC = ({ publisher }) => {
   const dc = getHeroByCount(publisher);
 
   return (
     <div className="col">
-      <div className="card text-bg-dark" style={{ height: "50vh" }}>
+      <div className="card text-bg-dark" style={{ height: '50vh' }}>
         <img
           src="DC.webp"
           className="card-img"
           style={{
             opacity: 0.3,
-            objectFit: "cover",
-            width: "100%",
-            height: "100%",
+            objectFit: 'cover',
+            width: '100%',
+            height: '100%',
             top: 0,
             left: 0,
           }}
@@ -28,7 +28,7 @@ export const CardDC = ({ publisher }) => {
           <div className="d-flex justify-content-between align-items-start mb-3">
             <h5 className="card-title">{publisher}</h5>
             <h6 className="card-title mb-0">
-              Número de héroes {""}
+              Número de héroes {''}
               <MotionHome value={dc} color={v.colorMotionOvalCardDC} />
             </h6>
           </div>

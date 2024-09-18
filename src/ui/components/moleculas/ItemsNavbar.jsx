@@ -1,7 +1,6 @@
-import { NavLink } from "react-router-dom";
-import { dataEstaticaNavbar } from "../../utils/dataNavbar";
-import { v } from "../../../styles/variables";
-import { Icon } from "../../../heroes";
+import { NavLink } from 'react-router-dom';
+import { dataEstaticaNavbar } from '../../utils/dataNavbar';
+import { Icon } from '../../../heroes';
 
 export const ItemsNavbar = () => {
   return (
@@ -9,7 +8,7 @@ export const ItemsNavbar = () => {
       {dataEstaticaNavbar.map((items) => (
         <NavLink
           className={({ isActive }) =>
-            `nav-item nav-link  m-2 p-2  ${isActive ? "active" : ""}`
+            `nav-item nav-link  m-2 p-2  ${isActive ? 'active' : ''}`
           }
           to={items.to}
           key={items.label}

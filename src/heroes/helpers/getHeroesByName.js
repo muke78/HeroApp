@@ -1,6 +1,6 @@
-import { heroes } from "../../ui";
+import { heroes } from '../../ui';
 
-export const getHeroesByName = (name = "") => {
+export const getHeroesByName = (name = '') => {
   name = name.toLowerCase().trim();
   if (name.length === 0) return [];
 

@@ -1,24 +1,24 @@
-import { v } from "../../styles/variables";
+import { v } from '../../styles/variables';
 
 export const dataEstaticaNavbar = [
   {
-    label: "Inicio",
+    label: 'Inicio',
     icono: <v.home />,
-    to: "/",
+    to: '/',
   },
   {
-    label: "Marvel",
+    label: 'Marvel',
     icono: <v.marvelIcon />,
-    to: "/marvel",
+    to: '/marvel',
   },
   {
-    label: "DC",
+    label: 'DC',
     icono: <v.dcIcon />,
-    to: "/dc",
+    to: '/dc',
   },
   {
-    label: "Search",
+    label: 'Search',
     icono: <v.searchIcon />,
-    to: "/search",
+    to: '/search',
   },
 ];

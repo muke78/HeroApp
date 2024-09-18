@@ -1,8 +1,8 @@
-import { HeroCard } from "../components/HeroCard";
-import { MotionHome } from "../components/MotionHome";
-import { MotionSearch } from "../components/MotionSearch";
-import { useSearch } from "../hooks/useSearch";
-import { v } from "../../styles/variables";
+import { HeroCard } from '../components/HeroCard';
+import { MotionHome } from '../components/MotionHome';
+import { MotionSearch } from '../components/MotionSearch';
+import { useSearch } from '../hooks/useSearch';
+import { v } from '../../styles/variables';
 
 export const SearchPage = () => {
   const {
@@ -61,14 +61,14 @@ export const SearchPage = () => {
 
           <div
             className="alert alert-primary animate__animated animate__fadeIn"
-            style={{ display: showSearch ? "" : "none" }}
+            style={{ display: showSearch ? '' : 'none' }}
           >
             Busca un heroe...
           </div>
 
           <div
             className="alert alert-danger animate__animated animate__fadeIn"
-            style={{ display: showError ? "" : "none" }}
+            style={{ display: showError ? '' : 'none' }}
           >
             No se encontro el heroe <b> {q} </b>
           </div>

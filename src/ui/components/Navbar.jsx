@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { v } from "../../styles/variables";
-import { Icon } from "../../heroes";
-import { ItemsNavbar } from "./moleculas/ItemsNavbar";
-import { UserContext } from "../../auth";
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { v } from '../../styles/variables';
+import { Icon } from '../../heroes';
+import { ItemsNavbar } from './moleculas/ItemsNavbar';
+import { UserContext } from '../../auth';
 
 export const Navbar = () => {
   const { user, logout } = useContext(UserContext);
@@ -11,7 +11,7 @@ export const Navbar = () => {
 
   const onLogout = () => {
     logout();
-    navigate("/login", {
+    navigate('/login', {
       replace: true,
     });
   };

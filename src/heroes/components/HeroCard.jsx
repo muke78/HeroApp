@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { Icon } from "./moleculas/Icon";
-import { v } from "../../styles/variables";
+import { Link } from 'react-router-dom';
+import { Icon } from './moleculas/Icon';
+import { v } from '../../styles/variables';
 
 const CharactersByHero = ({ characters, alter_ego }) => {
   if (characters === alter_ego) return <></>;
@@ -22,7 +22,7 @@ export const HeroCard = ({
       <div
         className="card text-light animate__animated animate__fadeIn m-1"
         style={{
-          background: publisher === "Marvel Comics" ? v.colorMarvel : v.colorDC,
+          background: publisher === 'Marvel Comics' ? v.colorMarvel : v.colorDC,
         }}
       >
         <img src={heroImageUrl} className="card-img-top" alt={superhero} />

@@ -1,13 +1,13 @@
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import queryString from "query-string";
-import { useForm } from "../../hooks/useForm";
-import { getHeroesByName } from "../helpers/getHeroesByName";
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import queryString from 'query-string';
+import { useForm } from '../../hooks/useForm';
+import { getHeroesByName } from '../helpers/getHeroesByName';
 
 export const useSearch = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { q = "" } = queryString.parse(location.search);
+  const { q = '' } = queryString.parse(location.search);
 
   const { searchText, onInputChange } = useForm({
     searchText: q,
@@ -17,13 +17,12 @@ export const useSearch = () => {
   const heroesCount = heroes.length;
 
   const heroesPublisherMarvel = heroes.filter(
-    (hc) => hc.publisher === "Marvel Comics"
+    (hc) => hc.publisher === 'Marvel Comics'
   ).length;
 
   const heroesPublisherCountsDC = heroes.filter(
-    (hc) => hc.publisher === "DC Comics"
+    (hc) => hc.publisher === 'DC Comics'
   ).length;
-
 
   const showSearch = q.length === 0;
   const showError = q.length > 0 && heroes.length === 0;
@@ -43,6 +42,6 @@ export const useSearch = () => {
     showSearch,
     heroesCount,
     heroesPublisherMarvel,
-    heroesPublisherCountsDC
+    heroesPublisherCountsDC,
   };
 };
