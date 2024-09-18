@@ -1,13 +1,20 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { v } from "../../styles/variables";
 import { Icon } from "../../heroes";
 import { ItemsNavbar } from "./moleculas/ItemsNavbar";
-import { useUser } from "../../auth/context/UserProvider";
-import { useLogout } from "../../hooks/useLogout";
+import { UserContext } from "../../auth";
 
 export const Navbar = () => {
-  const { onLogout } = useLogout();
+  const { user, logout } = useContext(UserContext);
+  const navigate = useNavigate();
 
-  const { user } = useUser();
+  const onLogout = () => {
+    logout();
+    navigate("/login", {
+      replace: true,
+    });
+  };
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-secondary">
@@ -28,7 +35,7 @@ export const Navbar = () => {
           <ItemsNavbar />
           <div className="ms-auto d-flex align-items-center">
             <span className="nav-item nav-link">
-              <h6>Hola, {user}</h6>
+              <h6>Hola, {user?.name}</h6>
             </span>
             <button
               type="button"

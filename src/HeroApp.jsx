@@ -1,24 +1,10 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import { Myroutes } from "./router/routes";
-import { LoginPage, UserProvider } from "./auth";
-import { Navbar } from "./ui";
+import { UserProvider } from "./auth";
+import { AppRouter } from "./router/AppRouter";
 
 export const HeroApp = () => {
-  const { pathname } = useLocation();
-
   return (
     <UserProvider>
-      {pathname != "/login" ? (
-        <>
-          <Navbar />
-          <div className="container">
-            <Myroutes />
-          </div>
-        </>
-      ) : (
-        <LoginPage />
-      )}
+      <AppRouter />
     </UserProvider>
   );
 };

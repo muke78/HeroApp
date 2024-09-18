@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useForm = (initialForm = {}) => {
+export const useFormLogin = (initialForm = {}) => {
   const [formState, setFormState] = useState(initialForm);
 
   const onInputChange = ({ target }) => {
@@ -17,7 +17,7 @@ export const useForm = (initialForm = {}) => {
 
     // Segunda forma de hacerlo
     setFormState({
-      username: formState.username, 
+      username: formState.username,
       email: formState.email,
       password: "",
     });
