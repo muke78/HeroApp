@@ -18,7 +18,7 @@ export const useForm = (initialForm = {}) => {
     // Segunda forma de hacerlo
     setFormState({
       username: formState.username, 
-      email: "",
+      email: formState.email,
       password: "",
     });
   };

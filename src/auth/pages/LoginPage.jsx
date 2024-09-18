@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "../hooks/useForm";
 import { v } from "../../styles/variables";
 import { useAuth } from "../hooks/useAuth";
-import { useLogout } from "../../hooks/useLogout";
 
-const emailLogin = "example@gmail.com";
 const passwordLogin = "123456";
 
 export const LoginPage = () => {
@@ -26,7 +24,7 @@ export const LoginPage = () => {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    if (email === emailLogin && password === passwordLogin) {
+    if (password === passwordLogin) {
       login(username);
       navigate("/", {
         replace: true,
@@ -38,7 +36,7 @@ export const LoginPage = () => {
   };
 
   useEffect(() => {
-    if (error && (email || password)) {
+    if (error && password) {
       setError("");
     }
   }, [formState]);
@@ -71,7 +69,7 @@ export const LoginPage = () => {
               value={email}
               onChange={onInputChange}
               className="form-control"
-              placeholder={emailLogin}
+              placeholder="Tu correo"
               required={true}
             />
           </div>
