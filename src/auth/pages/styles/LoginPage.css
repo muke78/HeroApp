@@ -10,8 +10,10 @@
 .box-login {
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   max-width: 1200px;
   border-radius: 0.5rem;
 }
@@ -155,14 +157,23 @@ label {
 
 @media screen and (max-width: 768px) {
   .container-login {
-    margin: auto 5%;
+    margin: 0 0;
   }
 
   .box_section2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 0;
+    height: 100%;
+    padding: 0%;
   }
+
+  .form-login {
+    padding: 20px;
+    width: 100%;
+  }
+
   .titleSize2 {
     font-size: 3rem;
   }
